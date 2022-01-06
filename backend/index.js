@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/products');
 const shopRoutes = require('./routes/shop');
+const userRoutes = require('./routes/user');
 const sequelize = require('./util/database');
 const Product = require('./models/product');
 const User = require('./models/user');
@@ -27,7 +28,7 @@ app.use((req, res, next) => {
 
 app.use(productRoutes);
 app.use(shopRoutes);
-
+app.use(userRoutes);
 User.hasOne(Cart);
 Cart.belongsTo(User);
 Cart.belongsToMany(Product, {through: CartItem});

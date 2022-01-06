@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/cart', shopController.getCart);
 
-router.post('/cart', shopController.postCart);
+router.post('/cart/:id', shopController.postCart);
 
 router.delete('/delete', shopController.postCartDeleteProduct);
 

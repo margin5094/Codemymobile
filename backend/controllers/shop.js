@@ -12,7 +12,7 @@ exports.getCart = (req, res, next) => {
 };
 
 exports.postCart = (req, res, next) => {
-  const prodId = req.body.productId;
+  const prodId = req.params.id;
   let fetchedCart;
   req.user
     .getCart()
